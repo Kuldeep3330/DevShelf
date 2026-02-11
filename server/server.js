@@ -11,6 +11,9 @@ mongoose.connect(process.env.MONGO_URI)
 .then(()=>console.log("MongoDB Connected"))
 .catch((err)=>console.log(err));
 
+import authRoutes from "./routes/auth.routes.js";
+app.use("/api/auth", authRoutes)
+
 app.get('/',(req, res)=>{
     res.send('hello owlrd')
 })
